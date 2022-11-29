@@ -114,7 +114,7 @@ function moveBall() {
   checkForCollisions();
 }
 
-timerId = setInterval(moveBall, 30);
+timerId = setInterval(moveBall, 10);
 
 function checkForCollisions() {
   for (let i = 0; i < blocks.length; i++) {
