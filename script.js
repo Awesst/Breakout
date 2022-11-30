@@ -116,6 +116,8 @@ function moveBall() {
 
 timerId = setInterval(moveBall, 18);
 
+const waudio = new Audio("Drumroll.mp3");
+
 function checkForCollisions() {
   for (let i = 0; i < blocks.length; i++) {
     if (
@@ -135,6 +137,7 @@ function checkForCollisions() {
         scoreDisplay.innerHTML = "YOU WIN!!!!";
         clearInterval(timerId);
         document.removeEventListener("keydown", moveUser);
+        waudio.play();
       }
     }
   }
@@ -155,11 +158,13 @@ function checkForCollisions() {
   ) {
     changeDirection();
   }
+  const audio = new Audio("Fatality.mp3");
 
   if (ballCurrentPosition[1] <= 0) {
     clearInterval(timerId);
     scoreDisplay.innerHTML = "You Lose!";
     document.removeEventListener("keydown", moveUser);
+    audio.play();
   }
 }
 
