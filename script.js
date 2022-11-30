@@ -114,7 +114,7 @@ function moveBall() {
   checkForCollisions();
 }
 
-timerId = setInterval(moveBall, 20);
+timerId = setInterval(moveBall, 18);
 
 function checkForCollisions() {
   for (let i = 0; i < blocks.length; i++) {
@@ -132,7 +132,7 @@ function checkForCollisions() {
       scoreDisplay.innerHTML = score;
 
       if (blocks.length === 0) {
-        scoreDisplay.innerHTML = "YOU WIN!!!";
+        scoreDisplay.innerHTML = "YOU WIN!!!!";
         clearInterval(timerId);
         document.removeEventListener("keydown", moveUser);
       }
